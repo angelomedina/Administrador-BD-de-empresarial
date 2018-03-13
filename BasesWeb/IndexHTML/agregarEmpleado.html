@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VK Seguridad y Monitoreo </title>
+
+
+    <!--library Propia -->
+    <script src="methods.js"></script>
+    <link  rel="stylesheet" href="styles.css">
+
+    <!--Library Menu-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Material Design for Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+
+
+
+
+</head>
+<body onload="myOnLoad()">
+<!-- Menu -->
+<div class="NavBar">
+    <ul class="nav nav-tabs">
+        <li role="presentation" ><a href="principal.html">Pricipal</a></li>
+        <li role="presentation" ><a href="consultar.html">Consultar</a></li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mostrar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="../IndexPHP/mostrarEmpleados.php">Mostrar Empleados</a></li>
+                <li><a href="../IndexPHP/mostrarPersonas.php">Mostrar Clientes</a></li>
+                <li><a href="../IndexPHP/facturasclienteXempresa.php">Mostrar Facturas</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="agregarBien.html">Agregar Bienes Empresa</a></li>
+                <li><a href="agregarEmpleado.html">Agregar Empleado</a></li>
+                <li><a href="agregarCliente.html">Agregar Cliente</a></li>
+                <li><a href="agregarProducto.html">Agregar Producto</a></li>
+            </ul>
+        </li>
+        <li role="presentation" ><a href="colaboradores.html">Colaboradores</a></li>
+    </ul>
+
+    <label class="titulo-label">Agregar Empleado</label><br><br>
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-header">
+            Información Basica
+        </div>
+        <div class="card-block">
+            <div class="contenido">
+
+                <form id="contenidoI">
+                    <input type="text" class="form-control" id="nombre-empleado" name="nombre-empleado" placeholder="Nombre" required  style="width : 200px; heigth : 100px"><br>
+                    <input type="text" class="form-control" id="apellido1-empleado" name="apellido1-empleado" placeholder="Primer Apellido" required  style="width : 200px; heigth : 100px"><br>
+                    <input type="text" class="form-control" id="apellido2-empleado" name="apellido2-empleado" placeholder="Segundo Apellido" required  style="width : 200px; heigth : 100px"><br>
+                    <input type="number" class="form-control" id="cedula-empleado" name="cedula-empleado" placeholder="Cedula" required  style="width : 200px; heigth : 100px"><br>
+                    <input type="number" class="form-control" id="telefono-empleado" name="telefono-empleado" placeholder="Telefono 8 digitos" required  style="width : 200px; heigth : 100px"><br>
+                </form>
+
+                <h6 class="cardT">Nacionalidad</h6>
+                <select   id="nacionalidad-empleado" name="nacionalidad-empleado" style="width : 120px; heigth : 100px">
+                </select><br><br>
+
+                <!-- Ventana Emergente de Agregar pais -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">No encuentro mi pais</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Agregar Nacionalidad</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="agregar-pais-nombre" placeholder="Nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="agregar-pais-id" placeholder="ID Unico">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" onclick="agregarNacionaliad()">Agregar</button><br><br>
+
+                                <div class="alert alert-success">
+                                    <strong id="textDiv">¡Verifique el select luego de enviar la solicitud!</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br>
+
+                <h6 class="cardT">Fecha de Nacimiento</h6>
+                <input type="date" class="form-control" id="fechanacimiento-empleado" name="fechanacimiento-empleado" placeholder="Fecha de Nacimiento" required  style="width : 200px; heigth : 100px"><br>
+                <h6 class="cardT">Género</h6>
+                <select class="selectpicker" id="genero-empleado">
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                </select>
+                <h6 class="cardT">Estado Civil</h6>
+                <select class="selectpicker" id="estadocivil-empleado">
+                    <option>Soltero</option>
+                    <option>Casado</option>
+                    <option>Unión Libre</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-header">
+            Contrato
+        </div>
+        <div class="card-block">
+            <div class="contenido">
+
+                <form id="contenidoII">
+                    <input type="number" class="form-control" id="poliza-empleado" name="poliza-empleado" placeholder="Poliza" required  style="width : 200px; heigth : 0px"><br>
+                    <input type="number" class="form-control" id="cuentabancaria-empleado" name="cuentabancaria-empleado" placeholder="Cuenta Bancaria" required  style="width : 200px; heigth : 0px"><br>
+                    <input type="number" class="form-control" id="salario-empleado" name="salario-empleado" placeholder="Salario" required  style="width : 200px; heigth : 0px"><br>
+
+
+                    <h6 class="cardT">Puesto Empleado</h6>
+                    <select   id="tiposalario-empleado" name="tiposalario-empleado" style="width : 120px; heigth : 100px">
+                    </select><br><br>
+
+
+                    <h6 class="cardT">Puesto Empleado</h6>
+                    <select   id="puesto-empleado" name="puesto-empleado" style="width : 120px; heigth : 100px">
+                    </select><br><br>
+
+                    <h6 class="cardT">Distrito Empleado</h6>
+                    <select   id="distrito-empleado" name="distrito-empleado" style="width : 120px; heigth : 100px">
+                    </select><br><br>
+
+                    <h6 class="cardT">Fecha de Inicio Laboral</h6>
+                    <input type="date" class="form-control" id="fecha-empleado" name="fecha-empleado" placeholder="Fecha de inicio Laboral" required  style="width : 200px; heigth : 100px"><br>
+                    <div class="form-group basic-textarea">
+                        <textarea class="form-control" id="señas-empleado" rows="3" placeholder="Señas"></textarea>
+                    </div><br>
+                    <h6 class="cardT">ID Empresa</h6>
+                    <select   id="id-empresa" name="id-empresa" style="width : 120px; heigth : 100px">
+                    </select><br><br>
+
+                </form>
+            </div>
+            <a href="#" class="btn btn-primary" onclick="agregarEmpleado()" >Guardar</a>
+        </div>
+            <div class="alert alert-info">
+                <strong id="mensajeI">¡Mensaje: cuendo se da guardar espere mientras deveuelve una respuesta!</strong>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

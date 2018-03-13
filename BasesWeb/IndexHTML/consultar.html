@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VK Seguridad y Monitoreo </title>
+
+    <!--library Propia -->
+    <script src="methods.js"></script>
+    <link  rel="stylesheet" href="styles.css">
+
+    <!--Library Menu-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Material Design for Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+</head>
+<body>
+<!-- Menu -->
+<div class="NavBar">
+    <ul class="nav nav-tabs">
+        <li role="presentation" ><a href="principal.html">Pricipal</a></li>
+        <li role="presentation" ><a href="consultar.html">Consultar</a></li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mostrar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="../IndexPHP/mostrarEmpleados.php">Mostrar Empleados</a></li>
+                <li><a href="../IndexPHP/mostrarPersonas.php">Mostrar Clientes</a></li>
+                <li><a href="../IndexPHP/facturasclienteXempresa.php">Mostrar Facturas</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="agregarBien.html">Agregar Bienes Empresa</a></li>
+                <li><a href="agregarEmpleado.html">Agregar Empleado</a></li>
+                <li><a href="agregarCliente.html">Agregar Cliente</a></li>
+                <li><a href="agregarProducto.html">Agregar Producto</a></li>
+            </ul>
+        </li>
+        <li role="presentation" ><a href="colaboradores.html">Colaboradores</a></li>
+    </ul>
+
+        <label class="titulo-label">Consultas</label><br><br>
+
+        <div class="card" style="width: 100rem;">
+            <div class="card-header">
+                Consulta Empresa Bienes
+            </div>
+            <div class="card-block">
+                <h6 class="cardT">Resultados a filtrar en busqueda</h6>
+                <div class="contenido">
+                    <select class="selectpicker" multiple id="busqueda-bien-consulta">
+                        <option>ID</option>
+                        <option>Modelo</option>
+                        <option>Placa</option>
+                        <option>Año</option>
+                    </select>
+                </div><br><br>
+                <a href="#" class="btn btn-primary">Buscar</a>
+            </div>
+        </div><br><br>
+
+        <div class="card" style="width: 100rem;">
+            <div class="card-header">
+                Consulta General Clientes
+            </div>
+            <div class="card-block">
+                <h6 class="cardT">Resultados a filtrar en busqueda</h6>
+                <div class="contenido">
+                    <select class="selectpicker" multiple id="busqueda-clientes-consulta">
+                        <option>Género</option>
+                        <option>Fecha Factura</option>
+                        <option>Número de Factura</option>
+                        <option>Cedula</option>
+                    </select>
+                </div><br><br>
+                <a href="#" class="btn btn-primary">Buscar</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 100rem;">
+            <div class="card-header">
+                Consulta de Empleados
+            </div>
+            <div class="card-block">
+                <div class="contenido">
+                    <input type="number" class="form-control" id="id-empleado-consulta" name="id" placeholder="Cedula" required  style="width : 200px; heigth : 100px"><br>
+                    <input type="number" class="form-control" id="id-empleado-nombre" name="nombre" placeholder="Nombre" required  style="width : 200px; heigth : 100px"><br>
+                    <input type="number" class="form-control" id="id-empleado-apellido" name="apellido" placeholder="Apellido" required  style="width : 200px; heigth : 100px"><br>
+                    <h6 class="cardT">Resultados a filtrar en busqueda</h6>
+                        <select class="selectpicker" multiple id="busqueda-empleado-consulta">
+                            <option>Salario</option>
+                            <option>Tipo jornada</option>
+                            <option>Fecha Inicio Laboral</option>
+                            <option>Número de Poliza</option>
+                            <option>Dirección Completa</option>
+                            <option>Puesto Laboral</option>
+                            <option>Número Telefonico</option>
+                            <option>Fecha Laboral</option>
+                            <option>Sitio Laboral</option>
+                            <option>Cuenta Bancaria</option>
+                        </select>
+                </div><br><br>
+                <a href="#" class="btn btn-primary">Buscar</a>
+            </div>
+        </div>
+
+
+</body>
+</html>

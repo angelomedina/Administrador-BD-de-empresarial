@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VK Seguridad y Monitoreo </title>
+
+    <!--library Propia -->
+    <script src="methods.js"></script>
+    <link  rel="stylesheet" href="styles.css">
+
+    <!--Library Menu-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Material Design for Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+</head>
+<body onload="myOnLoadVehiculos()">
+
+        <!-- Menu -->
+        <!-- Menu -->
+        <div class="NavBar">
+            <ul class="nav nav-tabs">
+                <li role="presentation" ><a href="principal.html">Pricipal</a></li>
+                <li role="presentation" ><a href="consultar.html">Consultar</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mostrar
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../IndexPHP/mostrarEmpleados.php">Mostrar Empleados</a></li>
+                        <li><a href="../IndexPHP/mostrarPersonas.php">Mostrar Clientes</a></li>
+                        <li><a href="../IndexPHP/facturasclienteXempresa.php">Mostrar Facturas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="agregarBien.html">Agregar Bienes Empresa</a></li>
+                        <li><a href="agregarEmpleado.html">Agregar Empleado</a></li>
+                        <li><a href="agregarCliente.html">Agregar Cliente</a></li>
+                        <li><a href="agregarProducto.html">Agregar Producto</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" ><a href="colaboradores.html">Colaboradores</a></li>
+            </ul>
+        <label class="titulo-label">Agregar Bien</label><br><br>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="titulo-label-2">Agregar Vehiculo</label><br><br><br>
+                    <div class="card" style="width: 30rem;">
+                        <div class="contenido">
+                            <form id="contenidoVehiculo">
+                                <input type="number" class="form-control" id="id-bien-vehiculo" name="id-bien-vehiculo" placeholder="ID Bien" required  style="width : 200px; heigth : 100px"><br>
+                                <input type="number" class="form-control" id="cantidad-vehiculo" name="cantidad-vehiculo" placeholder="Cantidad " required  style="width : 200px; heigth : 100px"><br>
+                                <input type="text" class="form-control" id="placa-vehiculo" name="placa-vehiculo" placeholder="Placa" required  style="width : 200px; heigth : 100px"><br>
+                                <input type="number" class="form-control" id="año-vehiculo" name="año-vehiculo" placeholder="Año" required  style="width : 200px; heigth : 100px"><br>
+                                <input type="text" class="form-control" id="propietario-vehiculo" name="propietario-vehiculo" placeholder="Propietario" required  style="width : 200px; heigth : 100px"><br>
+                            </form>
+
+                            <h6 class="cardT">Modelo</h6>
+                            <select   id="modelo-vehiculo" name="modelo-vehiculo" style="width : 120px; heigth : 100px">
+                            </select><br><br>
+
+                            <h6 class="cardT">Tipo</h6>
+                            <select   id="tipo-vehiculo" name="tipo-vehiculo" style="width : 120px; heigth : 100px">
+                            </select><br><br>
+
+                            <h6 class="cardT">Empresa</h6>
+                            <select   id="empresa-vehiculo" name="empresa-vehiculo" style="width : 120px; heigth : 100px">
+                            </select><br><br>
+
+                        </div>
+                        <a href="#" class="btn btn-primary" onclick="agregarVehiculo()">Guardar</a><br><br>
+                        <div class="alert alert-info">
+                            <strong id="mensajeVehiculo">¡Mensaje: cuendo se da guardar espere mientras deveuelve una respuesta!</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6">
+                    <label class="titulo-label-2">Agregar Equipo</label><br><br><br>
+                    <div class="card" style="width: 30rem;">
+
+                        <div class="contenido">
+
+                            <form id="contenidoEquipo">
+                                <input type="number" class="form-control" id="bien-equipo" name="bien-equipo" placeholder="ID Bien" required  style="width : 200px; heigth : 100px"><br>
+                                <input type="number" class="form-control" id="cantidad-equipo" name="cantidad-equipo" placeholder="Cantidad" required  style="width : 200px; heigth : 100px"><br>
+                                <input type="text" class="form-control" id="tipo-equipo" name="tipo-equipo" placeholder="Tipo" required  style="width : 200px; heigth : 100px"><br>
+                            </form>
+                            <h6 class="cardT">Modelo Equipo</h6>
+                            <select   id="modelo-equipo" name="modelo-equipo" style="width : 120px; heigth : 100px">
+                            </select><br><br>
+
+                            <h6 class="cardT">Empresa Equipo</h6>
+                            <select   id="empresa-equipo" name="empresa-equipo" style="width : 120px; heigth : 100px">
+                            </select><br><br>
+
+                        </div>
+                        <a href="#" class="btn btn-primary" onclick="agregarEquipo()">Guardar</a><br><br>
+                        <div class="alert alert-info">
+                            <strong id="mensajeEquipo">¡Mensaje: cuendo se da guardar espere mientras deveuelve una respuesta!</strong>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+</body>
+</html>

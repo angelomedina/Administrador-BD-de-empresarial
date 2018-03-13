@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VK Seguridad y Monitoreo </title>
+
+    <!--library Propia -->
+    <script src="methods.js"></script>
+    <link  rel="stylesheet" href="styles.css">
+
+    <!--Library Menu-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Material Design for Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+
+</head>
+<body onload="inicializar()">
+<!-- Menu -->
+<div class="NavBar">
+    <ul class="nav nav-tabs">
+        <li role="presentation" ><a href="principal.html">Pricipal</a></li>
+        <li role="presentation" ><a href="consultar.html">Consultar</a></li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mostrar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="../IndexPHP/mostrarEmpleados.php">Mostrar Empleados</a></li>
+                <li><a href="../IndexPHP/mostrarPersonas.php">Mostrar Clientes</a></li>
+                <li><a href="../IndexPHP/facturasclienteXempresa.php">Mostrar Facturas</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="agregarBien.html">Agregar Bienes Empresa</a></li>
+                <li><a href="agregarEmpleado.html">Agregar Empleado</a></li>
+                <li><a href="agregarCliente.html">Agregar Cliente</a></li>
+                <li><a href="agregarProducto.html">Agregar Producto</a></li>
+            </ul>
+        </li>
+        <li role="presentation" ><a href="colaboradores.html">Colaboradores</a></li>
+
+    </ul>
+</div><br>
+
+
+
+
+<div class="card" style="width:100rem;">
+    <div class="card-body">
+        <br><h4 class="titulo-label">VK Seguridad y Monitoreo</h4><br>
+        <img src="../Imagenes/principal.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+</div><br><br><br>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VK Seguridad y Monitoreo </title>
+
+    <!--library Propia -->
+    <script src="methods.js"></script>
+    <link  rel="stylesheet" href="styles.css">
+
+    <!--Library Menu-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Material Design for Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+</head>
+<body onload="myOnLoadII()">
+
+<!-- Menu -->
+<div class="NavBar">
+    <ul class="nav nav-tabs">
+        <li role="presentation" ><a href="principal.html">Pricipal</a></li>
+        <li role="presentation" ><a href="consultar.html">Consultar</a></li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mostrar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="../IndexPHP/mostrarEmpleados.php">Mostrar Empleados</a></li>
+                <li><a href="../IndexPHP/mostrarPersonas.php">Mostrar Clientes</a></li>
+                <li><a href="../IndexPHP/facturasclienteXempresa.php">Mostrar Facturas</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="agregarBien.html">Agregar Bienes Empresa</a></li>
+                <li><a href="agregarEmpleado.html">Agregar Empleado</a></li>
+                <li><a href="agregarCliente.html">Agregar Cliente</a></li>
+                <li><a href="agregarProducto.html">Agregar Producto</a></li>
+            </ul>
+        </li>
+        <li role="presentation" ><a href="colaboradores.html">Colaboradores</a></li>
+    </ul>
+
+<label class="titulo-label">Agregar Cliente</label><br><br><br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label class="titulo-label-2">Agregar Cliente Normal</label><br><br><br>
+            <div class="card" style="width: 30rem;">
+                <div class="card-header">
+                    Información Basica
+                </div>
+                <div class="contenido">
+                    <form id="contenidoIII">
+                        <input type="text" class="form-control" id="nombre-cliente-persona" name="nombre-cliente-persona" placeholder="Nombre" required  style="width : 200px; heigth : 100px"><br>
+                        <input type="text" class="form-control" id="apellido1-cliente-persona" name="apellido1-cliente-persona" placeholder="Primer Apellido" required  style="width : 200px; heigth : 100px"><br>
+                        <input type="text" class="form-control" id="apellido2-cliente-persona" name="apellido2-cleinte-persona" placeholder="Segundo Apellido" required  style="width : 200px; heigth : 100px"><br>
+                        <input type="number" class="form-control" id="cedula-cliente-persona" name="cedula-cliente-persona" placeholder="Cedula" required  style="width : 200px; heigth : 100px"><br>
+                    </form>
+
+                    <h6 class="cardT">Nacionalidad</h6>
+                    <select   id="nacionalidad-cliente-persona" name="nacionalidad-cliente-persona" style="width : 120px; heigth : 100px">
+                    </select><br><br>
+                    <!-- Ventana Emergente de Agregar pais -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">No encuentro mi pais</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Agregar Nacionalidad</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="agregar-pais-nombre" placeholder="Nombre">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" id="agregar-pais-id" placeholder="ID Unico">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary" onclick="agregarNacionaliad()">Agregar</button><br><br>
+
+                                    <div class="alert alert-success">
+                                        <strong id="textDiv">¡Verifique el select luego de enviar la solicitud!</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br>
+
+
+
+                    <h6 class="cardT">Fecha de Nacimiento</h6>
+                    <input type="date" class="form-control" id="fechanacimiento-cliente-persona" name="fechanacimiento-ciente-persona" placeholder="Fecha de Nacimiento" required  style="width : 200px; heigth : 100px"><br>
+                    <form id="contenidoIV">
+                        <input type="number" class="form-control" id="telefono-cliente-persona" name="telefono-cliente-persona" placeholder="Telefono 8 digitos" required  style="width : 200px; heigth : 100px"><br>
+                    </form>
+                    <h6 class="cardT">Género</h6>
+                    <select class="selectpicker" id="genero-cliente-persona">
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                    </select>
+                    <h6 class="cardT">Estado Civil</h6>
+                    <select class="selectpicker" id="estadocivil-cliente-persona">
+                        <option>Soltero</option>
+                        <option>Casado</option>
+                        <option>Unión Libre</option>
+                    </select>
+
+                    <h6 class="cardT">Distrito Cliente</h6>
+                    <select   id="distrito-cliente-persona" name="distrito-cliente-persona" style="width : 120px; heigth : 100px">
+                    </select><br><br>
+                    <div class="form-group basic-textarea">
+                        <textarea class="form-control" id="señas-cliente-persona" rows="3" placeholder="Señas"></textarea>
+                    </div><br>
+                </div>
+                <a href="#" class="btn btn-primary" onclick="agregarClientePersona()">Guardar</a><br><br>
+                <div class="alert alert-info">
+                    <strong id="mensajeII">¡Mensaje: cuendo se da guardar espere mientras deveuelve una respuesta!</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <label class="titulo-label-2">Agregar Cliente Empresarial</label><br><br><br>
+            <div class="card" style="width: 30rem;">
+                <div class="card-header">
+                    Información Basica
+                </div>
+                <div class="contenido">
+
+                    <form id="contenidoV">
+                        <input type="number" class="form-control" id="cedula-cliente-empresarial" name="cedula-cliente-empresarial" placeholder="Cedula Encargado Registrado" required  style="width : 240px; heigth : 100px"><br>
+                        <input type="number" class="form-control" id="cedulajuridica-cliente-empresarial" name="cedulajuridica-cliente-empresarial" placeholder="Cedula Juridica" required  style="width : 200px; heigth : 100px"><br>
+                        <input type="text" class="form-control" id="nombre-cliente-empresarial" name="nombre-cliente-empresarial" placeholder="Nombre Empresa" required  style="width : 200px; heigth : 100px"><br>
+                        <input type="number" class="form-control" id="telefono-cliente-empresarial" name="telefono-cliente-empresarial" placeholder="Telefono 8 digitos" required  style="width : 200px; heigth : 100px"><br>
+                    </form>
+                    <h6 class="cardT">Distrito Empleado</h6>
+                    <select   id="distrito-cliente-empresarial" name="distrito-cliente-empresarial" style="width : 120px; heigth : 100px">
+                    </select><br><br>
+
+                    <div class="form-group basic-textarea">
+                        <textarea class="form-control" id="señas-cliente-empresarial" rows="3" placeholder="Señas"></textarea>
+                    </div><br>
+                </div>
+                <a href="#" class="btn btn-primary" onclick="agregarClienteEmpresarial()">Guardar</a><br><br>
+                <div class="alert alert-info">
+                    <strong id="mensajeIII">¡Mensaje: cuendo se da guardar espere mientras deveuelve una respuesta!</strong>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

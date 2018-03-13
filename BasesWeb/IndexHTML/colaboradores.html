@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VK Seguridad y Monitoreo </title>
+
+    <!--library Propia -->
+    <script src="methods.js"></script>
+    <link  rel="stylesheet" href="styles.css">
+
+    <!--Library Menu-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Material Design for Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+
+</head>
+<body onload="inicializar()">
+<!-- Menu -->
+<div class="NavBar">
+    <ul class="nav nav-tabs">
+        <li role="presentation" ><a href="principal.html">Pricipal</a></li>
+        <li role="presentation" ><a href="consultar.html">Consultar</a></li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mostrar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="../IndexPHP/mostrarEmpleados.php">Mostrar Empleados</a></li>
+                <li><a href="../IndexPHP/mostrarPersonas.php">Mostrar Clientes</a></li>
+                <li><a href="../IndexPHP/facturasclienteXempresa.php">Mostrar Facturas</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="agregarBien.html">Agregar Bienes Empresa</a></li>
+                <li><a href="agregarEmpleado.html">Agregar Empleado</a></li>
+                <li><a href="agregarCliente.html">Agregar Cliente</a></li>
+                <li><a href="agregarProducto.html">Agregar Producto</a></li>
+            </ul>
+        </li>
+        <li role="presentation" ><a href="colaboradores.html">Colaboradores</a></li>
+    </ul>
+</div><br>
+
+
+<div class="card"><br>
+    <h1 class="titulo-label">Colaboradores</h1><br>
+    <div class="container">
+        <div class="row">
+            <!-- Info Card with social icons -->
+            <div class="info-card">
+                <div class="front">
+                    <img class="card-image" src="../Imagenes/angelo.jpg">
+                </div>
+                <div class="back">
+                    <h2 class="titulo-label-2">Angelo Guerrero Medina</h2>
+                    <p>
+                        Programador y estudiante del Instituto Tecnologico de Costa Rica.
+                    </p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/tigres0" class="social-icon facebook  animate"><span class="fa fa-facebook"></span></a>
+
+                        <a href="" target="_blank" class=" social-icon twitter  animate"><span class="fa fa-twitter"></span></a>
+
+                        <a href="https://github.com/angelomedina" target="_blank" class=" social-icon github  animate"><span class="fa fa-github-alt"></span></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Info Card with social icons -->
+                <div class="info-card">
+                    <div class="front">
+                        <img class="card-image" src="../Imagenes/wilfred.jpg">
+                    </div>
+                    <div class="back">
+                        <h2 class="titulo-label-2">Wilfred Alvarado Maltes</h2>
+                        <p>
+                            Programador y estudiante del Instituto Tecnologico de Costa Rica.
+                        </p>
+                        <div class="social">
+                            <a href="https://www.facebook.com/profile.php?id=100008645350218" class="social-icon facebook  animate"><span class="fa fa-facebook"></span></a>
+
+                            <a href="" target="_blank" class=" social-icon twitter  animate"><span class="fa fa-twitter"></span></a>
+
+                            <a href="" target="_blank" class=" social-icon github  animate"><span class="fa fa-github-alt"></span></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Info Card with social icons -->
+                    <div class="info-card">
+                        <div class="front">
+                            <img class="card-image" src="../Imagenes/marco.jpg">
+                        </div>
+                        <div class="back">
+                            <h2 class="titulo-label-2">Marco Vinicio Esquivel</h2>
+                            <p>
+                                Programador y estudiante del Instituto Tecnologico de Costa Rica.
+                            </p>
+                            <div class="social">
+                                <a href="https://www.facebook.com/marco301197" class="social-icon facebook  animate"><span class="fa fa-facebook"></span></a>
+
+                                <a href="" target="_blank" class=" social-icon twitter  animate"><span class="fa fa-twitter"></span></a>
+
+                                <a href="" target="_blank" class=" social-icon github  animate"><span class="fa fa-github-alt"></span></a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
